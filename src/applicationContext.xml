@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	     xmlns:aop="http://www.springframework.org/schema/aop"
+	     xmlns:tx="http://www.springframework.org/schema/tx"
+	     xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+           http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.0.xsd
+           http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.0.xsd">
+
+<!--  配置sessionFactory 
+  --> 
+  	<bean id="LoginDao" class="dao.impl.LoginDaoImpl">
+	</bean>
+	<bean id="LoginService" class="service.impl.LoginServiceImpl">
+		<property name="dao">
+			<ref bean="LoginDao"/>
+		</property>
+	</bean>		
+		<bean id="LoginAction" class="action.LoginAction">
+		<!-- 必须和action类的setter方法里的值一致 -->
+		<property name="service">
+			<ref bean="LoginService"/>
+		</property>
+	</bean>	
+	
+  	<bean id="RegisterInfoDao" class="dao.impl.RegisterInfoDaoImpl">
+	</bean>
+	<bean id="RegisterInfoService" class="service.impl.RegisterInfoServiceImpl">
+		<property name="dao">
+			<ref bean="RegisterInfoDao"/>
+		</property>
+	</bean>		
+		<bean id="Register_Step1Action" class="action.Register_Step1Action">
+		<!-- 
+		id必须和struts的class名相同
+		property的name必须和action类的setter方法里的值一致 -->
+		<property name="service1">
+			<ref bean="RegisterInfoService"/>
+		</property>
+		<property name="service2">
+			<ref bean="LoginService"/>
+		</property>
+	</bean>	
+	
+	<bean id="SessionDao" class="dao.impl.SessionDaoImpl">
+	</bean>
+	<bean id="SessionService" class="service.impl.SessionServiceImpl">
+		<property name="dao">
+			<ref bean="SessionDao"/>
+		</property>
+	</bean>		
+		<bean id="Salesman_SessionAction" class="action.Salesman_SessionAction">
+		<!-- 必须和action类的setter方法里的值一致 -->
+		<property name="service">
+			<ref bean="SessionService"/>
+		</property>
+	</bean>	
+	
+	<bean id="TicketDao" class="dao.impl.TicketDaoImpl">
+	</bean>
+	<bean id="TicketService" class="service.impl.TicketServiceImpl">
+		<property name="dao">
+			<ref bean="TicketDao"/>
+		</property>
+	</bean>
+		<bean id="Salesman_ShowSeatAction" class="action.Salesman_ShowSeatAction">
+		<property name="service1">
+			<ref bean="SessionService"/>
+		</property>
+		<property name="service2">
+			<ref bean="TicketService"/>
+		</property>
+	</bean>
+	
+	<bean id="RemainderDao" class="dao.impl.RemainderDaoImpl">
+	</bean>
+	<bean id="RemainderService" class="service.impl.RemainderServiceImpl">
+		<property name="dao">
+			<ref bean="RemainderDao"/>
+		</property>
+	</bean>
+	
+	<bean id="ConsumeDao" class="dao.impl.ConsumeDaoImpl">
+	</bean>
+	<bean id="ConsumeService" class="service.impl.ConsumeServiceImpl">
+		<property name="dao">
+			<ref bean="ConsumeDao"/>
+		</property>
+	</bean>
+	
+	<bean id="PaymentDao" class="dao.impl.PaymentDaoImpl">
+	</bean>
+	<bean id="PaymentService" class="service.impl.PaymentServiceImpl">
+		<property name="dao">
+			<ref bean="PaymentDao"/>
+		</property>
+	</bean>
+	
+	
+		<bean id="Salesman_SellAjaxAction" class="action.Salesman_SellAjaxAction">
+		<property name="service1">
+			<ref bean="RegisterInfoService"/>
+		</property>
+		<property name="service2">
+			<ref bean="RemainderService"/>
+		</property>
+	</bean>
+	
+	
+	<bean id="Salesman_TicketAjaxAction" class="action.Salesman_TicketAjaxAction">
+	<property name="service1">
+			<ref bean="TicketService"/>
+		</property>
+		<property name="service2">
+			<ref bean="ConsumeService"/>
+		</property>
+		<property name="service3">
+			<ref bean="RemainderService"/>
+		</property>
+		<property name="service4">
+			<ref bean="SessionService"/>
+		</property>
+		<property name="service5">
+			<ref bean="ValidateService"/>
+		</property>
+		<property name="service6">
+			<ref bean="RegisterInfoService"/>
+		</property>
+	</bean>
+
+	<bean id="Salesman_QueryAction" class="action.Salesman_QueryAction">
+	<property name="service1">
+			<ref bean="RegisterInfoService"/>
+		</property>
+		<property name="service2">
+			<ref bean="ConsumeService"/>
+		</property>
+		<property name="service3">
+			<ref bean="PaymentService"/>
+		</property>
+		<property name="service4">
+			<ref bean="LoginService"/>
+		</property>
+	</bean>
+	
+	<bean id="ActivityDao" class="dao.impl.ActivityDaoImpl">
+	</bean>
+	<bean id="ActivityService" class="service.impl.ActivityServiceImpl">
+		<property name="dao">
+			<ref bean="ActivityDao"/>
+		</property>
+	</bean>	
+	<bean id="Salesman_ActivityAjaxAction" class="action.Salesman_ActivityAjaxAction">
+		<property name="service">
+			<ref bean="ActivityService"/>
+		</property>
+	</bean>
+	
+	<bean id="PlanDao" class="dao.impl.PlanDaoImpl">
+	</bean>
+	<bean id="PlanService" class="service.impl.PlanServiceImpl">
+		<property name="dao">
+			<ref bean="PlanDao"/>
+		</property>
+		<property name="dao_">
+			<ref bean="MovieDao"/>
+		</property>
+	</bean>
+	
+	<bean id="Salesman_PlanAjaxAction" class="action.Salesman_PlanAjaxAction">
+		<property name="service">
+			<ref bean="PlanService"/>
+		</property>
+	</bean>
+	
+	<bean id="Salesman_ShowPlanAjaxAction" class="action.Salesman_ShowPlanAjaxAction">
+		<property name="service">
+			<ref bean="PlanService"/>
+		</property>
+	</bean>
+	
+	<bean id="Register_PhoneNumAjaxAction" class="action.Register_PhoneNumAjaxAction">
+		<property name="service">
+			<ref bean="RegisterInfoService"/>
+		</property>
+	</bean>
+	
+	<bean id="ValidateDao" class="dao.impl.ValidateDaoImpl">
+	</bean>
+	<bean id="ValidateService" class="service.impl.ValidateServiceImpl">
+		<property name="dao">
+			<ref bean="ValidateDao"/>
+		</property>
+	</bean>
+	
+	<bean id="Register_Step2Action" class="action.Register_Step2Action">
+		<!-- 
+		id必须和struts的class名相同
+		property的name必须和action类的setter方法里的值一致 -->
+		<property name="service1">
+			<ref bean="RegisterInfoService"/>
+		</property>
+		<property name="service2">
+			<ref bean="PaymentService"/>
+		</property>
+		<property name="service3">
+			<ref bean="RemainderService"/>
+		</property>
+		<property name="service4">
+			<ref bean="ValidateService"/>
+		</property>
+	</bean>	
+	
+	
+	<bean id="MovieDao" class="dao.impl.MovieDaoImpl">
+	</bean>
+	
+	<bean id="MovieService" class="service.impl.MovieServiceImpl">
+		<property name="dao">
+			<ref bean="MovieDao"/>
+		</property>
+	</bean>
+	
+	<bean id="Member_BuyAction" class="action.Member_BuyAction">
+		<property name="service1">
+			<ref bean="SessionService"/>
+		</property>
+		<property name="service2">
+			<ref bean="MovieService"/>
+		</property>
+	</bean>
+	
+	<bean id="Member_ShowSessionAction" class="action.Member_ShowSessionAction">
+		<property name="service1">
+			<ref bean="SessionService"/>
+		</property>
+		<property name="service2">
+			<ref bean="MovieService"/>
+		</property>
+	</bean>
+	
+	<bean id="Member_SeatAction" class="action.Member_SeatAction">
+		<property name="service1">
+			<ref bean="RegisterInfoService"/>
+		</property>
+		<property name="service2">
+			<ref bean="TicketService"/>
+		</property>
+		<property name="service3">
+			<ref bean="SessionService"/>
+		</property>
+		<property name="service4">
+			<ref bean="RemainderService"/>
+		</property>
+	</bean>
+	
+	<bean id="Member_TicketAjaxAction" class="action.Member_TicketAjaxAction">
+	<property name="service1">
+			<ref bean="TicketService"/>
+		</property>
+		<property name="service2">
+			<ref bean="ConsumeService"/>
+		</property>
+		<property name="service3">
+			<ref bean="RemainderService"/>
+		</property>
+		<property name="service4">
+			<ref bean="SessionService"/>
+		</property>
+		<property name="service5">
+			<ref bean="RegisterInfoService"/>
+		</property>
+		<property name="service6">
+			<ref bean="ValidateService"/>
+		</property>
+	</bean>
+	
+	<bean id="Member_ActivityAction" class="action.Member_ActivityAction">
+		<property name="service">
+			<ref bean="ActivityService"/>
+		</property>
+	</bean>
+	
+	<bean id="Member_ChangeActivityAjaxAction" class="action.Member_ChangeActivityAjaxAction">
+		<property name="service">
+			<ref bean="ActivityService"/>
+		</property>
+	</bean>
+	
+	<bean id="ActivityAnswerDao" class="dao.impl.ActivityAnswerDaoImpl">
+	</bean>
+	
+	<bean id="ActivityAnswerService" class="service.impl.ActivityAnswerServiceImpl">
+		<property name="dao">
+			<ref bean="ActivityAnswerDao"/>
+		</property>
+	</bean>
+	
+	<bean id="Member_ActivityAjaxAction" class="action.Member_ActivityAjaxAction">
+		<property name="service">
+			<ref bean="ActivityAnswerService"/>	
+		</property>
+	</bean>
+	
+	<bean id="Member_HandleAction" class="action.Member_HandleAction">
+		<property name="service1">
+			<ref bean="RegisterInfoService"/>
+		</property>
+		<property name="service2">
+			<ref bean="RemainderService"/>
+		</property>
+		<property name="service3">
+			<ref bean="ValidateService"/>
+		</property>
+	</bean>
+	
+	<bean id="Member_CancelAjaxAction" class="action.Member_CancelAjaxAction">
+		<property name="service">
+			<ref bean="ValidateService"/>
+		</property>
+	</bean>
+	
+	<bean id="Member_ActiveAjaxAction" class="action.Member_ActiveAjaxAction">
+		<!-- 
+		id必须和struts的class名相同
+		property的name必须和action类的setter方法里的值一致 -->
+		<property name="service1">
+			<ref bean="RegisterInfoService"/>
+		</property>
+		<property name="service2">
+			<ref bean="PaymentService"/>
+		</property>
+		<property name="service3">
+			<ref bean="RemainderService"/>
+		</property>
+		<property name="service4">
+			<ref bean="ValidateService"/>
+		</property>
+	</bean>	
+	
+	<bean id="Member_PayAjaxAction" class="action.Member_PayAjaxAction">
+		<!-- 
+		id必须和struts的class名相同
+		property的name必须和action类的setter方法里的值一致 -->
+		<property name="service1">
+			<ref bean="RegisterInfoService"/>
+		</property>
+		<property name="service2">
+			<ref bean="PaymentService"/>
+		</property>
+		<property name="service3">
+			<ref bean="RemainderService"/>
+		</property>
+		<property name="service4">
+			<ref bean="ValidateService"/>
+		</property>
+	</bean>	
+	
+	<bean id="Member_SettingsAction" class="action.Member_SettingsAction">
+	<property name="service1">
+			<ref bean="RegisterInfoService"/>
+		</property>
+		<property name="service2">
+			<ref bean="ConsumeService"/>
+		</property>
+		<property name="service3">
+			<ref bean="PaymentService"/>
+		</property>
+	</bean>
+	
+	<bean id="Member_ModifyAjaxAction" class="action.Member_ModifyAjaxAction">
+		<property name="service">
+			<ref bean="RegisterInfoService"/>
+		</property>
+		<property name="service_">
+			<ref bean="LoginService"/>
+		</property>
+	</bean>
+	
+	<bean id="Member_ExchangeAjaxAction" class="action.Member_ExchangeAjaxAction">
+		<property name="service1">
+			<ref bean="RegisterInfoService"/>
+		</property>
+		<property name="service2">
+			<ref bean="RemainderService"/>
+		</property>
+	</bean>
+	
+	<bean id="Manager_ApproveAction" class="action.Manager_ApproveAction">
+		<property name="service">
+			<ref bean="PlanService"/>
+		</property>
+	</bean>
+	<bean id="Manager_ShowModifyAjaxAction" class="action.Manager_ShowModifyAjaxAction">
+		<property name="service">
+			<ref bean="PlanService"/>
+		</property>
+	</bean>
+	<bean id="Manager_RemoveAjaxAction" class="action.Manager_RemoveAjaxAction">
+		<property name="service">
+			<ref bean="PlanService"/>
+		</property>
+	</bean>
+	<bean id="Manager_ModifyAjaxAction" class="action.Manager_ModifyAjaxAction">
+		<property name="service">
+			<ref bean="PlanService"/>
+		</property>
+	</bean>
+	
+	<bean id="Manager_ApproveAjaxAction" class="action.Manager_ApproveAjaxAction">
+		<property name="service1">
+			<ref bean="PlanService"/>
+		</property>
+		<property name="service2">
+			<ref bean="SessionService"/>
+		</property>
+	</bean>
+	
+	<bean id="Manager_ChartAction" class="action.Manager_ChartAction">
+		<property name="service1">
+			<ref bean="RegisterInfoService"/>
+		</property>
+		<property name="service2">
+			<ref bean="TicketService"/>
+		</property>
+		<property name="service3">
+			<ref bean="ValidateService"/>
+		</property>
+		<property name="service4">
+			<ref bean="ConsumeService"/>
+		</property>
+		<property name="service5">
+			<ref bean="SessionService"/>
+		</property>
+	</bean>
+	
+	<bean id="LogoutAction" class="action.LogoutAction">
+	</bean>
+	
+	<bean id="Manager_MovieAction" class="action.Manager_MovieAction">
+		<property name="service">
+			<ref bean="MovieService"/>
+		</property>
+	</bean>
+
+	<bean id="Manager_RemoveMovieAjaxAction" class="action.Manager_RemoveMovieAjaxAction">
+		<property name="service">
+			<ref bean="MovieService"/>
+		</property>
+	</bean>
+	
+	<bean id="Manager_AddMovieAjaxAction" class="action.Manager_AddMovieAjaxAction">
+		<property name="service">
+			<ref bean="MovieService"/>
+		</property>
+	</bean>
+	
+	<bean id="Salesman_PlanActivityAction" class="action.Salesman_PlanActivityAction">
+		<property name="service">
+			<ref bean="MovieService"/>
+		</property>
+	</bean>
+</beans>

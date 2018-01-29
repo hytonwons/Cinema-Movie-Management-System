@@ -1,0 +1,15 @@
+.profile-header {
+border: 1px solid #ddd;
+border-radius: 4px;
+box-shadow: 0 1px 0 #f2f4f5;
+}
+.profile-header-main {
+padding: 20px 20px 0 20px;
+}
+.top {
+margin-bottom: 20px;
+}
+.content{
+margin-left: 20px;
+margin-right: 10px;
+}

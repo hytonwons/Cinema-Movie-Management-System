@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-2-7 20:13:21 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping package="model">
+    <class name="RegisterInfo" table="REGISTERINFO">
+        <id name="ID" type="java.lang.String">
+            <column name="ID" />
+            <generator class="assigned" />
+        </id>
+        <property name="password" type="java.lang.String">
+            <column name="PASSWORD" />
+        </property>
+        <property name="telephone" type="java.lang.String">
+            <column name="TELEPHONE" />
+        </property>
+        <property name="bankCardNum" type="java.lang.String">
+            <column name="BANKCARDNUM" />
+        </property>
+        <property name="familyName" type="java.lang.String">
+            <column name="FAMILYNAME" />
+        </property>
+        <property name="gender" type="int">
+            <column name="GENDER" />
+        </property>
+        <property name="level" type="int">
+            <column name="LEVEL" />
+        </property>
+        <property name="point" type="int">
+            <column name="POINT" />
+        </property> 
+        <property name="age" type="int">
+            <column name="AGE" />
+        </property>         
+    </class>
+</hibernate-mapping>

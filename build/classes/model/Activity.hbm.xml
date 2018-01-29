@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-3-7 21:34:36 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping package="model">
+    <class name="Activity" table="ACTIVITY">
+        <id name="movieName" type="java.lang.String">
+            <column name="MOVIENAME" />
+            <generator class="assigned" />
+        </id>
+        <property name="q1" type="java.lang.String">
+            <column name="Q1" />
+        </property>
+        <property name="q1_A" type="java.lang.String">
+            <column name="Q1_A" />
+        </property>
+        <property name="q1_B" type="java.lang.String">
+            <column name="Q1_B" />
+        </property>
+        <property name="q1_C" type="java.lang.String">
+            <column name="Q1_C" />
+        </property>
+        <property name="q2" type="java.lang.String">
+            <column name="Q2" />
+        </property>
+        <property name="q2_A" type="java.lang.String">
+            <column name="Q2_A" />
+        </property>
+        <property name="q2_B" type="java.lang.String">
+            <column name="Q2_B" />
+        </property>
+        <property name="q2_C" type="java.lang.String">
+            <column name="Q2_C" />
+        </property>
+    </class>
+</hibernate-mapping>

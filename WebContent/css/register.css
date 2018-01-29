@@ -1,0 +1,66 @@
+.steps {
+height: 46px;
+border-bottom: 2px solid #e6e6e6;
+position: relative;
+}
+.steps ol li.active {
+color: #3e3e3e;
+border-bottom: 2px solid #ff4700;
+}
+.steps ol .active {
+border-bottom-color: #c40000!important;
+}
+.steps ol li {
+display: inline;
+float: left;
+width: 229px;
+text-align:center;
+height: 46px;
+line-height: 46px;
+font-size: 16px;
+font-weight: bold;
+color: #999;
+font-size:18px;
+}
+li{
+margin: 0;
+padding: 0;
+}
+li {
+display: list-item;
+text-align: -webkit-match-parent;
+}
+ol {
+list-style: none;
+}
+ol{
+list-style: none;
+}
+ol {
+display: block;
+list-style-type: decimal;
+-webkit-margin-before: 1em;
+-webkit-margin-after: 1em;
+-webkit-margin-start: 0px;
+-webkit-margin-end: 0px;
+-webkit-padding-start: 40px;
+}
+.steps ol .active i {
+background-image: url(../image/circle.png)!important;
+}
+.steps i {
+background-image: url(../image/circle_normal.png)!important;
+}
+.steps ol li i {
+display: inline-block;
+zoom: 1;
+margin-right: 5px;
+width: 24px;
+height: 24px;
+text-align: center;
+font-style: normal;
+line-height: 24px;
+font-size: 14px;
+font-weight: bold;
+color: #FFF;
+}

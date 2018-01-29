@@ -1,0 +1,33 @@
+
+/*---------------------header----------------------*/
+
+.header_{ height: 90px;margin:12px auto; overflow: hidden; position: relative; width: 800px; z-index: 2;}
+
+/*---------------------banner----------------------*/
+.banner_{ min-width:1000px;  position:relative;  height:500px; overflow:hidden;background: url(../image/background.jpg); }
+.login-aside{position:absolute; width:320px; height:300px; z-index:9999999; border-radius:5px; left:65%; top:100px;}
+
+#o-box-up,#o-box-down {
+    width:320px;
+    height:300px;
+    position:absolute;
+	border-radius:5px;
+
+}
+#o-box-up {
+    background-color:white;
+}
+ 
+#o-box-down{ padding:40px 0 40px 20px;}
+
+
+
+
+
+
+
+
+
+
+
+

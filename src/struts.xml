@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+      "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+      "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<constant name="struts.devMode" value="false" />
+	<!-- Struts2配置文件的根元素 -->
+	<package name="default" extends="struts-default" namespace="/">
+    	<action name="register_step1" class="Register_Step1Action">
+        	<result name="success">/register_step2.jsp</result>
+        </action>
+        
+        <action name="register_step2" class="Register_Step2Action">
+        	<result name="success">/register_step3.jsp</result>
+        </action>
+        
+        <action name="login" class="LoginAction" >
+        	<result type="redirectAction" name="salesman">salesman_session</result>
+            <result name="input">/index.jsp</result>
+            <result type="redirectAction" name="manager">manager_approve</result>
+            <result type="redirectAction" name="member">member_buy</result>
+        </action>
+        
+        <action name="member_buy" class="Member_BuyAction">
+        	<result name="success">/member_buy.jsp</result>
+        </action>
+        
+        <action name="member_seat" class="Member_SeatAction">
+        	<result name="success">/member_seat.jsp</result>
+        </action>
+        
+        <action name="member_showSession" class="Member_ShowSessionAction">
+        	<result name="success">/member_session.jsp</result>
+        </action>
+        
+        <action name="member_activity" class="Member_ActivityAction">
+        	<result name="success">/member_activity.jsp</result>
+        	<result name="none">/member_noneactivity.jsp</result>
+        	<result name="firstnone">/member_firstnoneactivity.jsp</result>
+        </action>
+        
+        <action name="member_handle" class="Member_HandleAction">
+        	<result name="success">/member_handle.jsp</result>
+        </action>
+        
+        <action name="member_settings" class="Member_SettingsAction">
+        	<result name="success">/member_settings.jsp</result>
+        </action>
+        
+        <action name="salesman_session" class="Salesman_SessionAction">
+        	<result name="success">/salesman_sale.jsp</result>
+        </action>
+        
+        <action name="salesman_showSeat" class="Salesman_ShowSeatAction">
+        	<result name="success">/salesman_seat.jsp</result>
+        </action>
+        
+        <action name="salesman_query" class="Salesman_QueryAction" >
+        	<result name="success">/salesman_query.jsp</result>
+        	<result name="error">/salesman_query_fail.jsp</result>
+        </action>
+        
+        <action name="manager_approve" class="Manager_ApproveAction">
+        	<result name="success">/manager_approve.jsp</result>
+        	<result name="none">/manager_noneapprove.jsp</result>
+        </action>
+        <action name="manager_chart" class="Manager_ChartAction">
+        	<result name="success">/manager_chart.jsp</result>
+        </action>
+        <action name="logout" class="LogoutAction">
+        	<result name="success">/index.jsp</result>
+        </action>
+        <action name="manager_movie" class="Manager_MovieAction">
+        	<result name="success">/manager_movie.jsp</result>
+        </action>
+        
+        <action name="planactivity_*" class="Salesman_PlanActivityAction" method="{1}">
+        	<result name="plan">/salesman_plan.jsp</result>
+        	<result name="activity">/salesman_activity.jsp</result>
+        </action>
+    </package>
+    
+    <package name="Ajax" extends="json-default" namespace="/">
+ 		<action name="sellAjax" class="Salesman_SellAjaxAction">
+ 			<result type="json"></result>
+ 		</action>
+ 		<action name="ticketAjax" class="Salesman_TicketAjaxAction">
+ 			<result type="json"></result>
+ 		</action>
+ 		<action name="activityAjax" class="Salesman_ActivityAjaxAction">
+ 			<result type="json"></result>
+ 		</action>
+ 		<action name="planAjax" class="Salesman_PlanAjaxAction">
+        	<result type="json"></result>
+        </action>
+        <action name="showplanAjax" class="Salesman_ShowPlanAjaxAction">
+        	<result type="json"></result>
+        </action>
+        <action name="registerAjax" class="Register_PhoneNumAjaxAction">
+        	<result type="json"></result>
+        </action>
+        <action name="buyAjax" class="Member_TicketAjaxAction">
+ 			<result type="json"></result>
+ 		</action>
+ 		<action name="changeActivityAjax" class="Member_ChangeActivityAjaxAction">
+ 			<result type="json"></result>
+ 		</action>
+ 		<action name="ActivityAnswerAjax" class="Member_ActivityAjaxAction">
+ 			<result type="json"></result>
+ 		</action>
+ 		<action name="cancelAjax" class="Member_CancelAjaxAction">
+ 			<result type="json"></result>
+ 		</action>
+ 		<action name="activeAjax" class="Member_ActiveAjaxAction">
+ 			<result type="json"></result>
+ 		</action>
+ 		<action name="payAjax" class="Member_PayAjaxAction">
+ 			<result type="json"></result>
+ 		</action>
+ 		<action name="modifyAjax" class="Member_ModifyAjaxAction">
+ 			<result type="json"></result>
+ 		</action>
+ 		<action name="exchangeAjax" class="Member_ExchangeAjaxAction">
+ 			<result type="json"></result>
+ 		</action>
+ 		<action name="showModifyAjax" class="Manager_ShowModifyAjaxAction">
+ 			<result type="json"></result>
+ 		</action>
+ 		<action name="removeAjax" class="Manager_RemoveAjaxAction">
+ 			<result type="json"></result>
+ 		</action>
+ 		<action name="manager_modifyAjax" class="Manager_ModifyAjaxAction">
+ 			<result type="json"></result>
+ 		</action>
+ 		<action name="checkAjax" class="Manager_ApproveAjaxAction">
+ 			<result type="json"></result>
+ 		</action>
+ 		<action name="removeMovieAjax" class="Manager_RemoveMovieAjaxAction">
+ 			<result type="json"></result>
+ 		</action>
+ 		<action name="addMovieAjax" class="Manager_AddMovieAjaxAction">
+ 			<result type="json"></result>
+ 		</action>
+    </package>
+
+</struts>

@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-3-8 18:29:40 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping package="model">
+    <class name="Plan" table="PLAN">
+        <id name="ID" type="int">
+            <column name="ID" />
+            <generator class="assigned" />
+        </id>
+        <property name="movieName" type="java.lang.String">
+            <column name="MOVIENAME" />
+        </property>
+        <property name="hallNum" type="int">
+            <column name="HALLNUM" />
+        </property>
+        <property name="date" type="java.sql.Date">
+            <column name="DATE" />
+        </property>
+        <property name="time" type="java.lang.String">
+            <column name="TIME" />
+        </property>
+        <property name="price" type="int">
+            <column name="PRICE" />
+        </property>
+        <property name="state" type="int">
+            <column name="STATE" />
+        </property>
+    </class>
+</hibernate-mapping>

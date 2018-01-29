@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-3-4 16:50:18 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping package="model">
+    <class name="Consume" table="CONSUME">
+        <id name="ID" type="int">
+            <column name="ID" />
+            <generator class="assigned" />
+        </id>
+        <property name="userID" type="java.lang.String">
+            <column name="USERID" />
+        </property>
+        <property name="money" type="int">
+            <column name="MONEY" />
+        </property>
+        <property name="date" type="java.sql.Date">
+            <column name="DATE" />
+        </property>
+        <property name="movieName" type="java.lang.String">
+            <column name="MOVIENAME" />
+        </property>
+    </class>
+</hibernate-mapping>

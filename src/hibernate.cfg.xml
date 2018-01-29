@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+                                         "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+ <session-factory>
+  <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+  <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/cinema</property>
+  <property name="hibernate.connection.username">root</property>
+  <property name="hibernate.connection.password"></property>
+  <property name="hibernate.dialect">org.hibernate.dialect.MySQL5InnoDBDialect</property>
+  <property name="hibernate.show_sql">true</property>
+  <!-- 以下两句能解决数据库存入中文乱码问题 -->
+  <property name="connection.useUnicode">true</property> 
+  <property name="connection.characterEncoding">UTF-8</property>
+  <!-- <property name="hibernate.hbm2ddl.auto">update</property> -->
+  
+  <mapping resource="model/RegisterInfo.hbm.xml"/> 
+  <mapping resource="model/User.hbm.xml"/>
+  <mapping resource="model/MovieSession.hbm.xml"/> 
+  <mapping resource="model/Consume.hbm.xml"/> 
+  <mapping resource="model/Ticket.hbm.xml"/> 
+  <mapping resource="model/Remainder.hbm.xml"/> 
+  <mapping resource="model/Payment.hbm.xml"/> 
+  <mapping resource="model/Activity.hbm.xml"/>
+  <mapping resource="model/Plan.hbm.xml"/>
+  <mapping resource="model/Validate.hbm.xml"/>
+  <mapping resource="model/Movie.hbm.xml"/>
+  <mapping resource="model/ActivityAnswer.hbm.xml"/>
+ </session-factory>
+ 
+</hibernate-configuration>

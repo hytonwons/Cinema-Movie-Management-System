@@ -1,0 +1,56 @@
+.playtime {
+width: 100%;
+font-family: 微软雅黑;
+}
+.playtime tr.first td {
+border-top: 0;
+}
+.p_r {
+padding-top:10px;
+}
+.b {
+padding-top:6px;
+}
+.playtime td.tl p {
+text-align: left;
+}
+.playtime p {
+padding: 2px 0;
+}
+.ci_p_time {
+font-size: 28px;
+color: #454545;
+font-weight: bold;
+}
+.playtime td {
+width: 20%;
+text-align: center;
+font-size: 16px;
+color: #757575;
+vertical-align: middle;
+border: 1px dashed #cdcdcd;
+border-left: none;
+border-right: 0;
+padding: 15px 0;
+}
+table {
+display: table;
+border-collapse: separate;
+border-spacing: 2px;
+border-color: gray;
+}
+.newprice {
+color: #ef6e09;
+font-size: 20px;
+font-weight:bold;
+}
+table {
+border-collapse: collapse;
+border-spacing: 0;
+}
+.tl {
+text-align: left;
+}
+.playtime td.tl {
+width: 16%;
+}

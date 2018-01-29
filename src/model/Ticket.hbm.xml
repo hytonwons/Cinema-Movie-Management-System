@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-3-4 16:59:09 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping  package="model">
+    <class name="Ticket" table="TICKET">
+        <id name="ID" type="int">
+            <column name="ID" />
+            <generator class="assigned" />
+        </id>
+        <property name="SessionID" type="int">
+            <column name="SESSIONID" />
+        </property>
+        <property name="userID" type="java.lang.String">
+            <column name="USERID" />
+        </property>
+        <property name="row" type="int">
+            <column name="ROW" />
+        </property>
+        <property name="column" type="int">
+            <column name="COL" />
+        </property>
+        <property name="price" type="int">
+            <column name="PRICE" />
+        </property>
+    </class>
+</hibernate-mapping>
