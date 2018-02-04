@@ -7,19 +7,19 @@ In this a J2EE Web Application, I applied Struts + Spring + Hibernate framework 
 Use Cases are as follows:
 * For Customers:
   * Sign in/up, log out
-  * Browse movies sessions, including time, price and theater id
-  * Pick a seat, place an order and make payment
+  * Browse movies sessions, including time, price and theater id
+  * Pick a seat, place an order and make payment
   * Deposit and withdraw money to and from his/her account
   * Join new activity
   * Postpone/cancel/resume/expire membership (a timer is needed)
-  * Upgrade/degrade membership(opt plans for his/her account)
+  * Upgrade/degrade membership(opt plans for his/her account)
 * For Salesman:
   * Sign in, log out
-  * Schedule movie sessions
-  * Sell movie tickets to member/non-member
+  * Schedule movie sessions
+  * Sell movie tickets to member/non-member
   * Create new activity
 * For Managers:
   * Sign in, log out
   * Create salesman account
-  * Approve movie sessions
-  * View monthly statistical data (data visulazation)
+  * Approve movie sessions
+  * View monthly statistical data (data visualization)
