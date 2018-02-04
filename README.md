@@ -2,7 +2,7 @@
 
 This is an undergraduate project of mine (in Spring 2015), some of the techniques used are out of fashion from the perspective of industry. But still, the basic web techniques are universal.
 
-In this a J2EE Web Application, I applied Struts + Spring + Hibernate framework for the backend part, MySQL for database, Bootstrap3 for UI, Ajax for some part of the data exchange and Highcharts.js for rendering statistics data.
+In this J2EE Web Application, I applied Struts + Spring + Hibernate framework for the backend part, MySQL for database, Bootstrap3 for UI, Ajax for some part of the data exchange and Highcharts.js for rendering statistics data.
 
 Use Cases are as follows:
 * For Customers:
